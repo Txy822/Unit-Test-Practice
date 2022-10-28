@@ -8,6 +8,8 @@ class CardValidation {
     // User INPUT  CORRECT//
 
     // User INPUT  FALSE//
+
+    //input has 19 char
     val randomCardInput = "3242-1222-1112-1216"
     val randomDateInput = "04/34"
 
@@ -16,9 +18,12 @@ class CardValidation {
         dateInput: String
     ): Boolean {
 
-        if()
-//        verifyBank()
-        return false
+        if((cardInput.length !=19)||(dateInput.length !=4) ||!verifyBank(cardInput)){
+            return  false
+        }
+       else {
+            return false
+        }
     }
 
     /*
