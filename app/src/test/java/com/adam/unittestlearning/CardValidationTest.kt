@@ -71,15 +71,19 @@ class CardValidationTest {
 
     @Test
     fun `right card detail-success`(){
-        assertTrue(cardValidation!!.getCardInputLength()==sampleInValidCard.length)
-        assertTrue(cardValidation!!.getDateInputLength()==sampleValidDate.length)
-
+       // assertTrue(cardValidation!!.getCardInputLength()==sampleInValidCard.length)
+        //assertTrue(cardValidation!!.getDateInputLength()==sampleValidDate.length)
         assertTrue(cardValidation!!.validateCardDetails(sampleValidCard,sampleValidDate))
+    }
 
+    @Test
+    fun `invalid card detail-success`(){
+        assertFalse(cardValidation!!.validateCardDetails(sampleInValidCard,sampleInValidDate))
     }
 
     @Test
     fun `card length too long-failure`(){
+
 
     }
 

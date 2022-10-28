@@ -13,32 +13,29 @@ class CardValidation {
     val randomCardInput = "3242-1222-1112-1216"
     val randomDateInput = "04/34"
 
+    val integerChars = '0'..'9'
+
+
+   // /^[a-zA-Z0-9._-]+$/
+   // "^4[0-9]{12}(?:[0-9]{3})?$"
+   // regex = "^4[0-9]{12}(?:[0-9]{3})?$";
+
     fun validateCardDetails(
         cardInput: String,
         dateInput: String
     ): Boolean {
-
-        if((cardInput.length !=19)||(dateInput.length !=4) ||!verifyBank(cardInput)){
-            return  false
-        }
-       else {
+        if ((cardInput.length != 19) || (dateInput.length != 4) ||(!checkIsCardNumberIsDigitAndHyphen()) ||(verifyBank(cardInput))) {
             return false
         }
+
+
+     return true
+    }
+    fun checkIsCardNumberIsDigitAndHyphen(): Boolean{
+      return  cardInput.all { it in integerChars || it == '-' }
     }
 
-    /*
-    Gets the length of valid input for card input
-     */
-    fun getCardInputLength():Int {
-        return cardInput.length
-    }
 
-    /*
- Gets the length of valid input for date
-  */
-    fun getDateInputLength():Int {
-        return dateInput.length
-    }
 
 
     fun verifyBank(cardInput: String) = when (cardInput.take(4)) {
