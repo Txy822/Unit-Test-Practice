@@ -8,16 +8,31 @@ class CardValidation {
     // User INPUT  CORRECT//
 
     // User INPUT  FALSE//
-    val cardInput1 = "3242-1222-1112-1216"
-    val dateInput1 = "04/34"
-    // User INPUT  FALSE//
+    val randomCardInput = "3242-1222-1112-1216"
+    val randomDateInput = "04/34"
 
     fun validateCardDetails(
         cardInput: String,
         dateInput: String
     ): Boolean {
+
+        if()
 //        verifyBank()
         return false
+    }
+
+    /*
+    Gets the length of valid input for card input
+     */
+    fun getCardInputLength():Int {
+        return cardInput.length
+    }
+
+    /*
+ Gets the length of valid input for date
+  */
+    fun getDateInputLength():Int {
+        return dateInput.length
     }
 
 

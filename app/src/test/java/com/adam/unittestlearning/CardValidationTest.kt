@@ -10,16 +10,29 @@ class CardValidationTest {
 
     var cardValidation: CardValidation? = null
 
+    private lateinit var sampleValidCard:String
+    private lateinit var sampleInValidCard:String
+
+    private lateinit var sampleValidDate:String
+    private lateinit var sampleInValidDate:String
+
     @Before
     fun setUp() {
         //this will be used to run before every test function
         cardValidation = CardValidation()
+        sampleValidCard ="1111-1222-1112-1216"
+        sampleInValidCard ="111341-1222-1112-12816"
+
+        sampleValidDate ="1216"
+        sampleInValidDate ="128816"
     }
 
     @After
     fun tearDown() {
         //this will be used to run after every test function
         cardValidation = null
+        sampleValidCard=""
+        sampleInValidCard=""
     }
 
     @Test
@@ -56,6 +69,23 @@ class CardValidationTest {
         assertFalse(validBank)
     }
 
+    @Test
+    fun `right card detail-success`(){
+        assertTrue(cardValidation!!.getCardInputLength()==sampleInValidCard.length)
+        assertTrue(cardValidation!!.getDateInputLength()==sampleValidDate.length)
+
+        assertTrue(cardValidation!!.validateCardDetails(sampleValidCard,sampleValidDate))
+
+    }
+
+    @Test
+    fun `card length too long-failure`(){
+
+    }
+
+    @Test
+    fun `date input length too long-failure`(){
+    }
 
 
 }
