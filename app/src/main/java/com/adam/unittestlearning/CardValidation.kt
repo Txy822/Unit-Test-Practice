@@ -24,7 +24,7 @@ class CardValidation {
         cardInput: String,
         dateInput: String
     ): Boolean {
-        if ((cardInput.length != 19) || (dateInput.length != 4) ||(!checkIsCardNumberIsDigitAndHyphen()) ||(verifyBank(cardInput))) {
+        if ((cardInput.length != 19) || (dateInput.length != 4) ||(!checkIsCardNumberIsDigitAndHyphen()) ||(!verifyBank(cardInput))) {
             return false
         }
 
